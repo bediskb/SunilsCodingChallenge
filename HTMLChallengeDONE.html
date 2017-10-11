@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Table by Sunil Bedi</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<!-- Exercise completed by Sunil Bedi -->
+<!-- Table created -->
+<table id="t_id">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Alex</td>
+    <td>Brown</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>Stacey</td>
+    <td>Miller</td>
+    <td>27</td>
+  </tr>
+</table>
+<br>
+
+<!-- This is the form that collects user data for adding to table -->
+<form>
+  First name:<br>
+  <input type="text" id="f_name">
+  <br>
+  Last name:<br>
+  <input type="text" id="l_name">
+  <br>
+  Age:<br>
+  <input type="text" id="s_age">
+  <br>
+  <br><br>
+  <input type="button" onclick="addRow();" value="Enrol">
+</form> 
+
+<script>
+//This function add row to the existing table
+function addRow() 
+{  
+	//Get values entered in variables in Javascript
+	var fname = document.getElementById("f_name");
+	var lname = document.getElementById("l_name");
+	var age = document.getElementById("s_age");
+	
+	//Find id of table
+	var myTable = document.getElementById("t_id");
+	
+	//insert row in table
+    var myRow = myTable.insertRow();
+	
+	//insert cells at positions 0,1 and 2 and write values obtained from user
+	myRow.insertCell(0).innerHTML = fname.value;
+	myRow.insertCell(1).innerHTML = lname.value;
+	myRow.insertCell(2).innerHTML = age.value;
+	
+}
+</script>
+</body>
+</html>
